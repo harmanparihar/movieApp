@@ -58,6 +58,12 @@ class ListsScreen extends Component {
                 this.setState({
                     movies: response.data.results,
                   });
+                if(this.state.movies.length > 10){
+                    this.setState({
+                        movies: this.state.movies.slice(0,10),
+                    });
+                    console.log(this.state.movies.length)
+                }
             } else {
                 console.log('resgister operation failed')
             }
